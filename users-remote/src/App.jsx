@@ -6,6 +6,7 @@ import "./index.css";
 
 const App = () => (
   <div className="container">
+    <h1>UserS List</h1>
     <UsersList/>
   </div>
 );

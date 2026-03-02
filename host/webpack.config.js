@@ -7,6 +7,10 @@ const deps = require("./package.json").dependencies;
 
 const printCompilationMessage = require('./compilation.config.js');
 
+// In dev, append ?dev=1 so remote URLs are distinct and less likely to be cached
+const isDev = process.env.NODE_ENV !== "production";
+const remoteSuffix = isDev ? "?dev=1" : "";
+
 module.exports = (_, argv) => ({
   output: {
     publicPath: "http://localhost:3000/",
@@ -65,9 +69,9 @@ module.exports = (_, argv) => ({
       name: "host",
       filename: "remoteEntry.js",
       remotes: {
-        analytics_remote: "analytics_remote@http://localhost:3001/remoteEntry.js",
-        users_remote:"users_remote@http://localhost:3002/remoteEntry.js",
-        notifications_remote:"notifications_remote@http://localhost:3003/remoteEntry.js"
+        analytics_remote: "analytics_remote@http://localhost:3001/remoteEntry.js" + remoteSuffix,
+        users_remote: "users_remote@http://localhost:3002/remoteEntry.js" + remoteSuffix,
+        notifications_remote: "notifications_remote@http://localhost:3003/remoteEntry.js" + remoteSuffix,
       },
       exposes: {},
       shared: {
@@ -79,6 +83,10 @@ module.exports = (_, argv) => ({
         "react-dom": {
           singleton: true,
           requiredVersion: deps["react-dom"],
+        },
+        "react-router-dom": {
+          singleton: true,
+          requiredVersion: deps["react-router-dom"],
         },
       },
     }),

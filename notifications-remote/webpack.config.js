@@ -20,6 +20,10 @@ module.exports = (_, argv) => ({
     port: 3003,
     historyApiFallback: true,
     watchFiles: [path.resolve(__dirname, 'src')],
+    headers: {
+      "Cache-Control": "no-store, no-cache, must-revalidate, max-age=0",
+      "Pragma": "no-cache",
+    },
     onListening: function (devServer) {
       const port = devServer.server.address().port
 
