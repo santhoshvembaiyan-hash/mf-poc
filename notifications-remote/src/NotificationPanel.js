@@ -66,6 +66,7 @@ const NotificationPanel = () => {
   return (
     <div className="notifications-widget">
       <h2 className="notifications-widget__title">
+        <h1 className="notifications-widget__h1">NotificationsSSS</h1>
         <span className="notifications-widget__title-icon" aria-hidden>🔔</span>
         Notification
         {unreadCount > 0 && (
@@ -74,6 +75,7 @@ const NotificationPanel = () => {
       </h2>
 
       <form className="notifications-widget__form" onSubmit={handleAdd}>
+        <h1 className="notifications-widget__h1">NotificationsSSS</h1>
         <input
           type="text"
           value={newMessage}

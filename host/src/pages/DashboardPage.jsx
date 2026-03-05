@@ -28,9 +28,9 @@ const statCards = [
 const DashboardPage = () => (
   <div className="dashboard">
     <div className="dashboard__hero">
-      <h1 className="dashboard__title">Welcome to Bug Tracker</h1>
+      <h1 className="dashboard__title">Welcome to POC</h1>
       <p className="dashboard__subtitle">
-        Micro frontend dashboard — manage analytics, users, and notifications in one place.
+        Testing : Micro frontend dashboard — manage analytics, users, and notifications in one place.
       </p>
     </div>
     <div className="dashboard__grid">
