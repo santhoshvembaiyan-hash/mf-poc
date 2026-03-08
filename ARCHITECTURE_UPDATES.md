@@ -1,7 +1,14 @@
-## 2026-03-08  
+## 2026-03-08
+
 Repository: santhoshvembaiyan-hash/mf-poc
 Branch: refs/heads/main
-Commit: 1. **Component or Module Changed**  
+
+Commit Message:testing trigger
+
+
+### Architecture Update
+
+1. **Component or Module Changed**  
 The only change in the commit is to a file named `Testing`. Given the name, it likely corresponds to a testing module or component in the codebase.
 
 2. **Architectural Impact**  
@@ -25,3 +32,20 @@ The only change in the commit is to a file named `Testing`. Given the name, it l
 
 **Summary:**  
 This commit focuses on testing infrastructure rather than core system modules. Its architectural impact is confined to improving development workflow and quality assurance processes. Documentation should be updated to ensure maintainers understand and can operate the new or modified testing triggers effectively.
+
+### Architecture Diagram
+
+```mermaid
+graph TD
+    Dev[Developer]
+    TestingModule[Testing Module / Script]
+    CI_CD[CI/CD Pipeline]
+    TestFramework[Test Framework]
+    EnvConfig[Environment Config / Secrets]
+
+    Dev -->|push code, trigger| CI_CD
+    CI_CD -->|run triggers defined in| TestingModule
+    TestingModule -->|invoke tests on| TestFramework
+    CI_CD --> EnvConfig
+    TestingModule --> EnvConfig
+```
